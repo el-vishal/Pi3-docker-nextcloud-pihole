@@ -1,0 +1,11 @@
+**********PiHoleDocker********
+
+
+Error: Address already in use
+I ran into bind issues as well, but I did show port 53 listening. In my case, on a fresh install the server is running DNS services. I stopped it with:
+
+
+sudo systemctl disable systemd-resolved.service
+sudo systemctl stop systemd-resolved
+
+
