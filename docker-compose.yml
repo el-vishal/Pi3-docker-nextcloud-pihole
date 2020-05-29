@@ -1,0 +1,26 @@
+version: "3.8"
+
+services:
+  db:
+    image: postgres
+    container_name: postgres_db_cn
+    restart: always
+    volumes:
+      - ./temp_postgres:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=nextcloud_db
+      - POSTGRES_USER=nextcloud_db_user
+      - POSTGRES_PASSWORD=qwerty8881212
+      - POSTGRES_HOST=localhost
+  app:
+    image: nextcloud
+    container_name: nextcloud_og_cn
+    restart: always
+    ports:
+      - 8080:80
+    volumes:
+      - ./temp_nextcloud:/var/www/html
+      - ./temp_nextcloud/data:/var/www/html/data:rw
+      - /home/vishal/Desktop/ext_HDD:/media/ext_hdd_1:rw
+    depends_on:
+      - db

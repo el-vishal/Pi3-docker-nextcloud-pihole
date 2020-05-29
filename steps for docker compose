@@ -1,0 +1,21 @@
+understand docker
+"" docker-compose
+
+reader docker-compose yaml file syntaxes
+
+deleteing containers, volumes, network, images
+
+mounting host data points
+
+hidden files
+
+sudo chown www-data:www-data docker_test_3/ -R
+
+Not advised to make external storage as / 
+be it this way
+
+change config.php in nextcloud/config/config.php to add users
+	'192.168.0.*' works
+	
+ 
+
