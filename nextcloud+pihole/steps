@@ -1,0 +1,19 @@
+add jwilder's nginx reverse proxy position
+
+
+Error: Address already in use
+I ran into bind issues as well, but I did show port 53 listening. In my case, on a fresh install the server is running DNS services. I stopped it with:
+
+
+sudo systemctl disable systemd-resolved.service
+sudo systemctl stop systemd-resolved
+
+
+https://github.com/pi-hole/docker-pi-hole/issues/410
+Seems like Pi-hole works irrespective of Misconfigured DNS 127.0.0.11 warning
+
+I was facing the exact same warning, along with service errors
+pihole_1 | chown: cannot access '': No such file or directory pihole_1 | chmod: cannot access '': No such file or directory pihole_1 | chown: cannot access '/etc/pihole/dhcp.leases': No such file or directory
+
+Not mounting var logs strangely solved it
+

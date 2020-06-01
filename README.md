@@ -7,6 +7,8 @@ Installed OS
 	- Hypriot
 
 Todo
+* Enable reverse proxy for Pihole as default host
+* Create environment file
 * Enable Log2Ram
 * Get version number of tools to avoid future breaking
 
