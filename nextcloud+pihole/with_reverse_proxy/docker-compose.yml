@@ -37,7 +37,7 @@ services:
       TZ: 'Europe/London'
       WEBPASSWORD: ${PIHOLE_WEBPASSWORD}
       PROXY_LOCATION: pihole
-      VIRTUAL_HOST: pihole.local
+      VIRTUAL_HOST: ${PIHOLE_LOCAL_DOMAIN}
       VIRTUAL_PORT: 80
     extra_hosts:
       # Resolve to nothing domains (terminate connection)
@@ -45,7 +45,7 @@ services:
       # LAN hostnames for other docker containers using jwilder
       - 'pihole.local:${SERVER_IP}'
       - 'pihole pihole.local:${SERVER_IP}'
-      - 'nextcloud_app nextcloud_app.local:${SERVER_IP}'
+      - 'nextcloud_app ${NEXTCLOUD_LOCAL_DOMAIN}:${SERVER_IP}'
       #- 'wordpress wordpress.yourDomain.lan:192.168.41.55'
     restart: always
   postgres_db:
