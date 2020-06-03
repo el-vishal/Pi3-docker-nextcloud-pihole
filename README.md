@@ -2,18 +2,6 @@
 
 ## Model: B 
 
-### Installed OS
-	* <s> DietPi </s>
-	* Hypriot
-
-### Todo
-* <s> Enable reverse proxy for Pihole as default host </s> Main reason it seems is to make default host to Pi
-* <s> Create environment file </s>
-* <s> Enable Log2Ram </s> Mounted on external hdd
-* <s> Get version number of tools to avoid future breaking </s>
-* <s> auto start docker containers on reboot </s> restart:always <- Docker compose
-* <s> pihole disable dns, network access? </s> not needed for hyriot
-
 ### PiA
 "DockerVersion": "18.09.7"
 - Nextcloud
@@ -24,15 +12,31 @@
 - Brudy Nginx proxy
 	- budry/jwilder-nginx-proxy-arm - https://hub.docker.com/r/budry/jwilder-nginx-proxy-arm
 
-Nextcloud doesn't seem to be well-performing as a Media server. Planned to share as SMB and use Kodi/Plex
+#### Installed OS
+* <s> DietPi </s>
+* Hypriot
+
+Nextcloud doesn't seem to be well-performing as a Media server. Planned to share as <s> SMB </s> NFS and use Kodi/Plex as well as Transmission
+
+#### Todo
+* <s> Enable reverse proxy for Pihole as default host </s> Main reason it seems is to make default host to Pi
+* <s> Create environment file </s>
+* <s> Enable Log2Ram </s> Mounted on external hdd
+* <s> Get version number of tools to avoid future breaking </s>
+* <s> auto start docker containers on reboot </s> restart:always <- Docker compose
+* <s> pihole disable dns, network access? </s> not needed for hyriot
+
 
 ### PiB
 - PiHole
+- Web browser
 - Transmission (with VPN)
 - SteamLink
+- Volumio/RuneAudio?
 
+#### Installed OS
+* DietPi
 
-Volumio/RuneAudio?
 
 ### Useful links: 
 * Mounting external disks - https://github.com/nextcloud/docker/issues/236
@@ -40,6 +44,10 @@ Volumio/RuneAudio?
 * Environment file - https://www.techrepublic.com/article/how-to-use-docker-env-file/
 * Hypriot static IP  - https://dzone.com/articles/configuring-a-static-ip-on-hypriotos-for-the-raspb
 * Ext HDD mount pi - https://www.raspberrypi.org/documentation/configuration/external-storage.md
+* ssh grpahical application - https://askubuntu.com/questions/886313/what-is-the-simplest-way-to-have-remote-gui-access-to-ubuntu-16-04-server-from 		(ssh -X user@ip-address)
+* IPv4 docker overlap - Using VPN? - https://stackoverflow.com/questions/43720339/docker-error-could-not-find-an-available-non-overlapping-ipv4-address-pool-am
+* NFS Sharing guide - https://www.raspberrypi.org/documentation/configuration/nfs.md
+* Windscribe linux - https://windscribe.com/guides/linux#how-to
 
 ### Useful docker commands
 * docker-compose config -> gives final docker-compose file with env variables
