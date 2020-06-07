@@ -64,3 +64,4 @@ sudo systemctl enable systemd-resolved.service
 
 ### Tips
 Mounting on ext_hddd requires sudo permissions?
+add permission to access on host machine : sudo chmod u+rwx /mnt/data
